@@ -9,12 +9,18 @@ public class FontDecorator extends WindowDecorator {
 
     public FontDecorator(WindowComponent decoratedWindow) {
         super(decoratedWindow);
-        applyFont();
     }
 
-    private void applyFont() {
-        ((SimpleWindow) decoratedWindow).getLabel().setFont(new Font("Serif", Font.BOLD, 11));
+    public void render() {
+        super.render();
+        ((SimpleWindow) decoratedWindow).getLabel().setFont(new Font("Serif", Font.BOLD, 25));
         ((SimpleWindow) decoratedWindow).getLabel().setText(((SimpleWindow) decoratedWindow).getLabel().getText() + " (Changement de Police) ");
+    }
+
+    public void reset() {
+        super.reset();
+        ((SimpleWindow) decoratedWindow).getLabel().setFont(new Font("Serif", Font.PLAIN, 15));
+        ((SimpleWindow) decoratedWindow).getLabel().setText(((SimpleWindow) decoratedWindow).getLabel().getText().replace(" (Changement de Police) ", ""));
     }
 
 }

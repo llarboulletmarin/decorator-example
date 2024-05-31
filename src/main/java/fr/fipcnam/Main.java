@@ -7,46 +7,41 @@ import fr.fipcnam.decorators.FontDecorator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Main {
+
+    private static DarkThemeDecorator darkThemeDecorator;
+    private static FontDecorator fontDecorator;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             SimpleWindow window = new SimpleWindow();
             window.render();
 
-            JButton darkThemeButton = new JButton("Thème Sombre");
-            JButton fontButton = new JButton("Changer la Police");
+            JToggleButton darkThemeButton = new JToggleButton("Thème Sombre");
+            JToggleButton fontButton = new JToggleButton("Changer la Police");
 
-            darkThemeButton.addActionListener(new ActionListener() {
-                boolean isDarkTheme = false;
-                WindowComponent decoratedWindow = window;
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    isDarkTheme = !isDarkTheme;
-                    if (isDarkTheme) {
-                        decoratedWindow = new DarkThemeDecorator(decoratedWindow);
-                    } else {
-                        decoratedWindow = window;
+            darkThemeButton.addActionListener(_ -> {
+                if (darkThemeButton.isSelected()) {
+                    darkThemeDecorator = new DarkThemeDecorator(window);
+                    darkThemeDecorator.render();
+                } else {
+                    if (darkThemeDecorator != null) {
+                        darkThemeDecorator.reset();
+                        darkThemeDecorator = null;
                     }
-                    decoratedWindow.render();
                 }
             });
 
-            fontButton.addActionListener(new ActionListener() {
-                boolean isFontChanged = false;
-                WindowComponent decoratedWindow = window;
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    isFontChanged = !isFontChanged;
-                    if (isFontChanged) {
-                        decoratedWindow = new FontDecorator(decoratedWindow);
-                    } else {
-                        decoratedWindow = window;
+            fontButton.addActionListener(_ -> {
+                if (fontButton.isSelected()) {
+                    fontDecorator = new FontDecorator(window);
+                    fontDecorator.render();
+                } else {
+                    if (fontDecorator != null) {
+                        fontDecorator.reset();
+                        fontDecorator = null;
                     }
-                    decoratedWindow.render();
                 }
             });
 
