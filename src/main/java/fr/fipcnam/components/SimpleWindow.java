@@ -16,6 +16,7 @@ public class SimpleWindow extends JFrame implements WindowComponent {
      */
     public SimpleWindow() {
         label = new JLabel("Fenêtre Simple", SwingConstants.CENTER);
+        label.setFont(new Font("Serif", Font.PLAIN, 15));
     }
 
     /**
@@ -27,7 +28,6 @@ public class SimpleWindow extends JFrame implements WindowComponent {
         setSize(1000, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(label, BorderLayout.CENTER);
-        label.setFont(new Font("Serif", Font.PLAIN, 15));
         setVisible(true);
     }
 
