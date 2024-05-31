@@ -10,4 +10,4 @@ mvn clean install
 java -jar target/decorator-exemple-1.0-SNAPSHOT.jar
 ```
 
-https://github.com/llarboulletmarin/decorator-example/assets/63777637/4b7f994c-8229-4f07-8d08-afffb73cb8e3
+https://github.com/llarboulletmarin/decorator-example/assets/63777637/339134d1-000f-4ef7-aad4-153273159a0b
