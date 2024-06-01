@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/lucal/OneDrive - LECNAM/2e année/Semestre2/Méthodologie avancée/decorator-example</OriginalElement>
+  <nodes>
+    <node x="-493.0584984022448" y="318.5901620866033">fr.fipcnam.decorators.FontDecorator</node>
+    <node x="-253.31387319244368" y="10.046084976798937">fr.fipcnam.components.WindowComponent</node>
+    <node x="-423.6224840681408" y="158.73845284991634">fr.fipcnam.decorators.WindowDecorator</node>
+    <node x="-230.4015698172015" y="318.5901620866033">fr.fipcnam.decorators.DarkThemeDecorator</node>
+    <node x="-98.53707313541724" y="146.73845284991637">fr.fipcnam.components.SimpleWindow</node>
+    <node x="-493.0584984022448" y="522.3338163891248">fr.fipcnam.ui.FontButton</node>
+    <node x="-201.4959250532055" y="522.3338163891248">fr.fipcnam.ui.DarkThemeButton</node>
+    <node x="-232.81387319244368" y="-82.2589808903369">fr.fipcnam.Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="fr.fipcnam.ui.FontButton" target="fr.fipcnam.decorators.FontDecorator" relationship="TO_ONE">
+      <point x="-32.87192884948706" y="-42.64241916048741" />
+      <point x="-410.4304272517319" y="487.1624503838814" />
+      <point x="-410.5584984022448" y="487.1624503838814" />
+      <point x="0.0" y="43.50000000000006" />
+    </edge>
+    <edge source="fr.fipcnam.decorators.FontDecorator" target="fr.fipcnam.decorators.WindowDecorator" relationship="GENERALIZATION">
+      <point x="46.73243027291477" y="-38.95650157852015" />
+      <point x="-364.42746824480355" y="323.13366050808315" />
+      <point x="-364.42746824480355" y="315.655" />
+      <point x="-364.9627598152423" y="315.655" />
+      <point x="-85.84027574710149" y="44.16371636160798" />
+    </edge>
+    <edge source="fr.fipcnam.components.SimpleWindow" target="fr.fipcnam.components.WindowComponent" relationship="REALIZATION">
+      <point x="4.8075666443025966E-4" y="-68.00045284991634" />
+      <point x="-16.036592378752815" y="128.0" />
+      <point x="-100.11359699769037" y="128.0" />
+      <point x="50.700276194753314" y="47.93269677839746" />
+    </edge>
+    <edge source="fr.fipcnam.decorators.WindowDecorator" target="fr.fipcnam.components.WindowComponent" relationship="TO_ONE">
+      <point x="-129.0345598117666" y="6.652890726504069" />
+      <point x="-408.1570438799074" y="53.54608497679894" />
+      <point x="-102.5" y="0.0" />
+    </edge>
+    <edge source="fr.fipcnam.decorators.DarkThemeDecorator" target="fr.fipcnam.decorators.WindowDecorator" relationship="GENERALIZATION">
+      <point x="-70.28405373938034" y="-46.70990654953857" />
+      <point x="86.93686051155896" y="41.8903329897835" />
+    </edge>
+    <edge source="fr.fipcnam.decorators.WindowDecorator" target="fr.fipcnam.components.WindowComponent" relationship="REALIZATION">
+      <point x="4.84068140792715E-4" y="-55.99981828042439" />
+      <point x="-279.122" y="128.0" />
+      <point x="-203.55254041570424" y="128.0" />
+      <point x="-52.73866722326056" y="47.93269677839746" />
+    </edge>
+    <edge source="fr.fipcnam.ui.DarkThemeButton" target="fr.fipcnam.decorators.DarkThemeDecorator" relationship="TO_ONE">
+      <point x="-78.90564476399601" y="-43.5" />
+      <point x="0.0" y="43.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="true" x="-189.0" y="263.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
